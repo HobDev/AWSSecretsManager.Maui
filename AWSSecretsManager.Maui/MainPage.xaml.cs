@@ -7,19 +7,21 @@
         public MainPage()
         {
             InitializeComponent();
+            Loaded += OnLoaded;
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void OnLoaded(object? sender, EventArgs e)
         {
-            count++;
+            string secret1 = "Secret 1";
+            string secret2 = "Secret 2";
+            string secret3 = "Secret 3";
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            Label1.Text = $"Secret1:  {secret1}";
+            Label2.Text = $"Secret2:  {secret2}";
+            Label3.Text = $"Secret3:  {secret3}";
         }
+
+       
     }
 
 }
