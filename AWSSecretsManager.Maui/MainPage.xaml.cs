@@ -35,7 +35,7 @@ namespace AWSSecretsManager.Maui
 
             try
             {
-                response = await cache.GetSecretString("secretName");
+                response = await cache.GetSecretString(secretName);
 
             }
             catch (Exception ex)
