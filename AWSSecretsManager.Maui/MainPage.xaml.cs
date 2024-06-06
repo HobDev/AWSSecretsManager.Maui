@@ -15,9 +15,9 @@ namespace AWSSecretsManager.Maui
             Loaded += OnLoaded;
         }
 
-        private void OnLoaded(object? sender, EventArgs e)
+        private async void  OnLoaded(object? sender, EventArgs e)
         {
-          string secret1=  GetSecretFromAWS().Result;
+          string secret1=await  GetSecretFromAWS();
            
             string secret2 = "Secret 2";
             string secret3 = "Secret 3";
@@ -28,7 +28,7 @@ namespace AWSSecretsManager.Maui
 
         }
 
-        private async Task<string> GetSecretFromAWS()
+         private async Task<string> GetSecretFromAWS()
         {
             /*    *	Use this code snippet in your app.
     *	If you need more information about configurations or implementing the sample code, visit the AWS docs:
